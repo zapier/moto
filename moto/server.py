@@ -45,7 +45,7 @@ class DomainDispatcherApplication(object):
                 if re.match(url_base, 'http://%s' % host):
                     return backend_name
 
-        raise RuntimeError('Invalid host: "%s"' % host)
+        return host
 
     def get_application(self, environ):
         path_info = environ.get('PATH_INFO', '')
